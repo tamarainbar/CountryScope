@@ -9,91 +9,99 @@ import SwiftUI
 
 struct Quiz: View {
     @State var guess = ""
+    @State var submitted = false
     
-    //@State var america = 6
-    //@State var canada = ["french", "Ottawa"]
-    @State var countries: [[String]] = [["United States","english", "Washington DC"], ["Canada","french", "Ottawa"]]
-    
-    //countries.append(canada)
+    @State var countries: [[String]] = [
+        ["France","french", "Paris"],
+        ["Italy","italian", "Rome"],
+        ["Germany","german", "Berlin"],
+        ["United States","english", "Washington DC"],
+        ["Canada","french", "Ottawa"]]
     
     
     var body: some View {
-        //countries.append(america)
         VStack (spacing: 50) {
             Text("Quiz")
                 .font(.title)
             
-            let countryNum = Int.random(in: 0...countries.count-1)
+            let countryNum = Int.random(in: 0..<countries.count)
+            let factNum = Int.random(in: 1..<countries[countryNum].count)
+            
             let secretCountry = countries[countryNum][0]
-            let randFact = countries[countryNum][Int.random(in: 1...countries[countryNum].count-1)]
+            let randFact = countries[countryNum][factNum]
+            
             Text("\(secretCountry)\n\(randFact)")
+            
+            
             VStack (spacing: 10){
                 HStack {
-                    Button {
-                        guess = "USA"
-                    } label: {
-                        Text("USA")
-                    }
-                    Button {
-                        guess = "Canada"
-                    } label: {
-                        Text("Canada")
-                    }
+                    countryButton(country: "United States")
+                    countryButton(country: "Canada")
                 }
                 HStack {
-                    Button {
-                        guess = "France"
-                    } label: {
-                        Text("France")
-                    }
-                    Button {
-                        guess = "Italy"
-                    } label: {
-                        Text("Italy")
-                    }
+                    countryButton(country: "France")
+                    countryButton(country: "Italy")
                 }
                 HStack {
-                    Button {
-                        guess = "Mexico"
-                    } label: {
-                        Text("Mexico")
-                    }
-                    Button {
-                        guess = "Germany"
-                    } label: {
-                        Text("Germany")
-                    }
+                    countryButton(country: "Mexico")
+                    countryButton(country: "Brazil")
                 }
             } //VStack
             
+            submitButton()
             
-            VStack (spacing: 10){
-                Text(guess)
+            if submitted == true && guess == secretCountry {
+                Text("You Win!")
+            } else {
+                Text("incorrect")
+                //self.guess = ""
+            }
+            
+        } //VStack
+    } //body
+    
+    func countryButton(country: String) -> some View {
+        Button {
+            guess = country
+        } label: {
+            VStack (spacing: 0) {
+                Image("map_pin")
+                    .resizable()
+                    .frame(width: 30.0, height: 30.0)
+                Text(country)
+            }
+        }
+    }
+    
+    
+    func submitButton() -> some View {
+        VStack (spacing: 10){
+            Text(guess)
+            if(guess.count > 0) {
                 Button {
-                    
+                    submitted = true;
                 } label: {
-                    if(guess.count > 0) {
                         Text("Submit")
                             .frame(width: 100.0, height: 25.0)
                             .background(Color.green)
                             .tint(Color.white)
                             .buttonStyle(.borderedProminent)
                             .cornerRadius(10)
-                    } else {
+                }
+            } else {
+                Button {
+                    submitted = false;
+                } label: {
                         Text("Submit")
-                            .frame(width: 100.0, height: 20.0)
+                            .frame(width: 100.0, height: 25.0)
                             .background(Color.gray)
                             .tint(Color.white)
                             .buttonStyle(.borderedProminent)
                             .cornerRadius(10)
-                            
-                    }
                 }
-            } //VStack
+            }
         } //VStack
     }
-    
-    
     
 }
 
