@@ -9,30 +9,27 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Welcome!")
-            NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/)
-            {
+        
+        NavigationStack {
+            VStack {
+                Image(systemName: "globe")
+                    .imageScale(.large)
+                    .foregroundStyle(.tint)
+                Text("Welcome!")
                 
-                    Button("Learn")
-                    {
-                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-                    }
-            }
-            
-            NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
-                Button("Quiz")
+                NavigationLink(destination: Learn())
                 {
-                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                    Text("Learn")
                 }
-            }
-
-
-        } // end of vstack
-        .padding()
+                
+                NavigationLink(destination: Quiz()) {
+                    Text("Quiz")
+                }
+                
+                
+            } // end of vstack
+            .padding()
+        } // end of nav stack
     }
 }
 
