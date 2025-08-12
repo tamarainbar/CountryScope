@@ -52,6 +52,7 @@ struct Quiz: View {
                 }
             } //VStack
             
+            
             VStack (spacing: 10){
                 Text(guess)
                 Button {
@@ -76,8 +77,14 @@ struct Quiz: View {
                 }
             } //VStack
         } //VStack
+        
+        
     }
+    
+    
 }
+
+
 
 #Preview {
     Quiz()
