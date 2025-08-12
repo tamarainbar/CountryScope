@@ -26,11 +26,22 @@ struct Learn: View {
             
             Marker("Bolivia", coordinate: CLLocationCoordinate2D(latitude: -16.2902, longitude: -63.5887))
             
-            Marker("", coordinate: CLLocationCoordinate2D(latitude: 56.1304, longitude: -106.3468))
+            Marker("Chile", coordinate: CLLocationCoordinate2D(latitude: -35.6751, longitude: -71.5430))
         
-            Marker("", coordinate: CLLocationCoordinate2D(latitude: 56.1304, longitude: -106.3468))
+            Marker("Columbia", coordinate: CLLocationCoordinate2D(latitude: -4.5709, longitude: -74.2973))
             
-            Marker("", coordinate: CLLocationCoordinate2D(latitude: 56.1304, longitude: -106.3468))
+            Marker("Ecuador", coordinate: CLLocationCoordinate2D(latitude: -1.8312, longitude: -78.1834))
+            
+            Marker("Guyana", coordinate: CLLocationCoordinate2D(latitude: -4.8604, longitude: -58.9302))
+            
+            Marker("Paraguay", coordinate: CLLocationCoordinate2D(latitude: -23.4425, longitude: -58.4438))
+            
+            Marker("Suriname", coordinate: CLLocationCoordinate2D(latitude: -3.9193, longitude: -56.0278))
+            
+            Marker("Uruguay", coordinate: CLLocationCoordinate2D(latitude: -32.5228, longitude: -55.7658))
+            
+            Marker("Venezuela", coordinate: CLLocationCoordinate2D(latitude: -6.4238, longitude: -66.5897))
+            
             
         }
         .mapControlVisibility(.hidden)
