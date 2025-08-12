@@ -9,30 +9,49 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Welcome!")
-            NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/)
-            {
-                
-                    Button("Learn")
-                    {
-                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-                    }
-            }
             
-            NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
-                Button("Quiz")
-                {
-                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-                }
-            }
-
-
-        } // end of vstack
-        .padding()
+            NavigationStack {
+                ZStack{
+                    Color.mint
+                        .ignoresSafeArea(edges: .all)
+                    VStack {
+                        //  Text("hi")
+                        //  .multilineTextAlignment(.leading)
+                        Text("Country")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .multilineTextAlignment(.leading)
+                        
+                        
+                        
+                        
+                        
+                        Text("Kaleidoscope")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .multilineTextAlignment(.trailing)
+                        
+                        Spacer()
+                        Image(systemName: "globe")
+                            .imageScale(.large)
+                            .foregroundStyle(.tint)
+                        Text("Welcome!")
+                        
+                        NavigationLink(destination: Learn())
+                        {
+                            Text("Learn")
+                        }
+                        
+                        NavigationLink(destination: Quiz()) {
+                            Text("Quiz")
+                            
+                        }
+                        Spacer()
+                        
+                    } // end of vstack
+                    .padding()
+                }//end of ZStack
+            } // end of nav stack
     }
 }
 
