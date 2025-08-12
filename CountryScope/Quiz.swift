@@ -9,10 +9,24 @@ import SwiftUI
 
 struct Quiz: View {
     @State var guess = ""
+    
+    //@State var america = 6
+    //@State var canada = ["french", "Ottawa"]
+    @State var countries: [[String]] = [["United States","english", "Washington DC"], ["Canada","french", "Ottawa"]]
+    
+    //countries.append(canada)
+    
+    
     var body: some View {
+        //countries.append(america)
         VStack (spacing: 50) {
             Text("Quiz")
                 .font(.title)
+            
+            let countryNum = Int.random(in: 0...countries.count-1)
+            let secretCountry = countries[countryNum][0]
+            let randFact = countries[countryNum][Int.random(in: 1...countries[countryNum].count-1)]
+            Text("\(secretCountry)\n\(randFact)")
             VStack (spacing: 10){
                 HStack {
                     Button {
@@ -52,6 +66,7 @@ struct Quiz: View {
                 }
             } //VStack
             
+            
             VStack (spacing: 10){
                 Text(guess)
                 Button {
@@ -59,7 +74,7 @@ struct Quiz: View {
                 } label: {
                     if(guess.count > 0) {
                         Text("Submit")
-                            .frame(width: 100.0, height: 20.0)
+                            .frame(width: 100.0, height: 25.0)
                             .background(Color.green)
                             .tint(Color.white)
                             .buttonStyle(.borderedProminent)
@@ -77,6 +92,9 @@ struct Quiz: View {
             } //VStack
         } //VStack
     }
+    
+    
+    
 }
 
 #Preview {
