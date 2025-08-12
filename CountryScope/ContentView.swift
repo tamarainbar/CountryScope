@@ -17,7 +17,9 @@ struct ContentView: View {
                        VStack(spacing:10){
                            HStack{
                                Text("Country")
-                                   .font(.largeTitle)
+                                   .font(.custom(
+                                    "American Typewriter",
+                                    fixedSize:50))
                                    .fontWeight(.bold)
                                    .foregroundColor(Color.black)
                                    .multilineTextAlignment(.leading)
@@ -26,8 +28,14 @@ struct ContentView: View {
                                    
                            }//end of HStack
                            Text("Kaleidoscope")
-                               .font(.largeTitle)
-                               .fontWeight(.bold)
+                               .font(.custom(
+                               "American Typewriter",
+                               fixedSize:40))
+                               //.font(.largeTitle)
+                           
+                           
+//                               .fontWeight(.bold)
+                               .fontWeight(.light)
                                .multilineTextAlignment(.center)
                                                     
                        }//end of VStack 2
@@ -39,20 +47,45 @@ struct ContentView: View {
                            .padding(.bottom)
                        
                        
-                            Image(systemName: "globe")
-                            .imageScale(.large)
-                            .foregroundStyle(.tint)
-                        Text("Welcome!")
+                     //       Image(systemName: "globe")
+                       //     .imageScale(.large)
+                         //   .foregroundStyle(.tint)
+                            //   Text("Welcome!")
                         
-                        NavigationLink(destination: Learn())
+                      //Add Vstack soon!
+                       NavigationLink(destination: Learn())
                         {
-                            Text("Learn")
-                        }
-                        
+                            ZStack{
+                                RoundedRectangle(cornerRadius: 9)
+                                    .frame(width: 150, height: 60)
+                               //     .fill(LinearGradient(
+                                  //  colors:[.green, .blue],
+                                    //startPoint: .top,
+                              //      endPoint: .bottom ))
+                                    
+                                 
+                               
+                                Text("Learn")
+                                    .font(.title)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(Color.green)
+                                
+                                
+                            }//end of ZStack learn
+                        }//end of nav 1
+                   Spacer()
                         NavigationLink(destination: Quiz()) {
-                            Text("Quiz")
+                            ZStack{
+                                RoundedRectangle(cornerRadius: 9)
+                                    .frame(width: 150, height: 60)
+                               
+                                Text("Quiz")
+                                    .font(.title)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(Color.green)
+                            }//end of ZStack quiz
                             
-                        }
+                        }//end of nav 2
                         Spacer()
                         
                     } // end of vstack
