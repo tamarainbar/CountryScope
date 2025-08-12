@@ -9,30 +9,37 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-            
             NavigationStack {
-                ZStack{
-                    Color.mint
-                        .ignoresSafeArea(edges: .all)
-                    VStack {
-                        //  Text("hi")
-                        //  .multilineTextAlignment(.leading)
-                        Text("Country")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-                            .multilineTextAlignment(.leading)
-                        
-                        
-                        
-                        
-                        
-                        Text("Kaleidoscope")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-                            .multilineTextAlignment(.trailing)
-                        
-                        Spacer()
-                        Image(systemName: "globe")
+               ZStack{
+                  Color(red: 183/255, green: 232/255, blue: 232/255)
+                       .ignoresSafeArea(edges: .all)
+                   VStack{
+                       VStack(spacing:10){
+                           HStack{
+                               Text("Country")
+                                   .font(.largeTitle)
+                                   .fontWeight(.bold)
+                                   .foregroundColor(Color.black)
+                                   .multilineTextAlignment(.leading)
+                                   .padding(.leading)
+                              Spacer()
+                                   
+                           }//end of HStack
+                           Text("Kaleidoscope")
+                               .font(.largeTitle)
+                               .fontWeight(.bold)
+                               .multilineTextAlignment(.center)
+                                                    
+                       }//end of VStack 2
+                       Image("plane")
+                           .resizable()
+                           .aspectRatio(contentMode: .fit)
+                           .padding(.bottom, 100)
+                           .frame(width: 350, height: 350)
+                           .padding(.bottom)
+                       
+                       
+                            Image(systemName: "globe")
                             .imageScale(.large)
                             .foregroundStyle(.tint)
                         Text("Welcome!")
@@ -49,8 +56,11 @@ struct ContentView: View {
                         Spacer()
                         
                     } // end of vstack
-                    .padding()
-                }//end of ZStack
+                
+
+                   
+                //.padding()
+               }//end of ZStack
             } // end of nav stack
     }
 }
