@@ -9,10 +9,21 @@ import SwiftUI
 
 struct Venezuela: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                // Title
+                Text("                 Venezuela")
+                    .font(.largeTitle)
+                    .foregroundColor(Color(hue: 0.145, saturation: 0.874, brightness: 0.842))
+                    .multilineTextAlignment(.center)
+                    .bold()
+                Image("VenezuelaFlag")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            }
+        }
     }
-}
-
+    }
 #Preview {
     Venezuela()
 }

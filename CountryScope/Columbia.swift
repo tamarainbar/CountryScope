@@ -12,9 +12,14 @@ struct Columbia: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 // Title
-                Text("Columbia")
+                Text("                  Colombia")
                     .font(.largeTitle)
+                    .foregroundColor(Color(hue: 0.149, saturation: 0.664, brightness: 0.933))
+                    .multilineTextAlignment(.center)
                     .bold()
+                Image("colombiaFlag")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
             }
         }
     }
