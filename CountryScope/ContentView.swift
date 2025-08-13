@@ -23,7 +23,7 @@ struct ContentView: View {
                                 Text("Country")
                                     .font(.custom(
                                         "American Typewriter",
-                                        fixedSize:50))
+                                        fixedSize:45))
                                     .fontWeight(.bold)
                                     .foregroundColor(Color.black)
                                     .multilineTextAlignment(.leading)
@@ -35,7 +35,7 @@ struct ContentView: View {
                                 .font(.custom(
                                     "American Typewriter",
                                     fixedSize:40))
-                                .fontWeight(.light)
+                                .fontWeight(.bold)
                                 .multilineTextAlignment(.trailing)
                         }//end of VStack 2
                         Image ("map_pin") //stand in for logo
