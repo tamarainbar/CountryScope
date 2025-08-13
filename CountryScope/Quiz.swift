@@ -32,7 +32,13 @@ struct Quiz: View {
     var body: some View {
         VStack (spacing: 50) {
             Text("Quiz")
-                .font(.title)
+                .font(.custom(
+                 "American Typewriter",
+                 fixedSize:40))
+                .fontWeight(.bold)
+                .foregroundColor(Color.black)
+                .multilineTextAlignment(.leading)
+            
             
             let countryNum = Int.random(in: 0..<countries.count)
             let factNum = Int.random(in: 1..<countries[countryNum].count)
@@ -63,8 +69,92 @@ struct Quiz: View {
                         }
                         Text("")
                     }
-                }
-                    /*
+                    VStack (spacing: 360){
+                        HStack (spacing: -80){
+                            Text("")
+                            countryButton(country: "Colombia")
+                        }
+                        Text("")
+                    }
+                    VStack (spacing: 285){
+                        HStack (spacing: -100){
+                            Text("")
+                            countryButton(country: "Ecuador")
+                        }
+                        Text("")
+                    }
+                    VStack (spacing: 210){
+                        HStack (spacing: -90){
+                            Text("")
+                            countryButton(country: "Peru")
+                        }
+                        Text("")
+                    }
+                    VStack (spacing: 360){
+                        HStack (spacing: 70){
+                            Text("")
+                            countryButton(country: "Suriname")
+                        }
+                        Text("")
+                    }
+                    VStack (spacing: 355){
+                        HStack (spacing: 110){
+                            Text("")
+                            countryButton(country: "French Guiana")
+                        }
+                        Text("")
+                    }
+                    VStack (spacing: 190){
+                        HStack (spacing: 120){
+                            Text("")
+                            countryButton(country: "Brazil")
+                        }
+                        Text("")
+                    }
+                    VStack (spacing: 100){
+                        HStack (spacing: -35){
+                            Text("")
+                            countryButton(country: "Bolivia")
+                        }
+                        Text("")
+                    }
+                    VStack (spacing: 10){
+                        HStack (spacing: 10){
+                            Text("")
+                            countryButton(country: "Paraguay")
+                        }
+                        Text("")
+                    }
+                    VStack (spacing: -10){
+                        HStack (spacing: -55){
+                            Text("")
+                            countryButton(country: "Chile")
+                        }
+                        Text("")
+                    }
+                    VStack (spacing: -49.0){
+                        HStack (spacing: -35){
+                            Text("")
+                            countryButton(country: "Argentina")
+                        }
+                        Text("")
+                    }
+                    VStack (spacing: -40){
+                        HStack (spacing: 70){
+                            Text("")
+                            
+                            countryButton(country: "Uruguay")
+                        }
+                        Text("")
+                    }
+                    
+                    
+                    
+                    
+                }//end of giant ZStack
+                   
+                
+                /*
                     HStack {
                         countryButton(country: "Ecuador")
                         countryButton(country: "Colombia")
@@ -138,9 +228,10 @@ struct Quiz: View {
                     submitted = false;
                 } label: {
                         Text("Submit")
-                            .frame(width: 100.0, height: 25.0)
+                            .frame(width: 100.0, height: 35.0)
                             .background(Color.green)
                             .tint(Color.white)
+                            .bold(true)
                             .buttonStyle(.borderedProminent)
                             .cornerRadius(10)
                 }
@@ -151,9 +242,10 @@ struct Quiz: View {
                     }
                 } label: {
                         Text("Submit")
-                            .frame(width: 100.0, height: 25.0)
-                            .background(Color.gray)
+                            .frame(width: 100.0, height: 35.0)
+                            .background(Color.blue1)
                             .tint(Color.white)
+                            .bold(true)
                             .buttonStyle(.borderedProminent)
                             .cornerRadius(10)
                 }
