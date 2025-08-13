@@ -17,7 +17,7 @@ struct ContentView: View {
                    VStack{
                        VStack(spacing:10){
                            HStack{
-                               Text("      Country")
+                               Text("Country")
                                    .font(.custom(
                                     "American Typewriter",
                                     fixedSize:50))
