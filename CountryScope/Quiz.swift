@@ -142,12 +142,13 @@ struct Quiz: View {
                     VStack (spacing: -40){
                         HStack (spacing: 70){
                             Text("")
-                            
                             countryButton(country: "Uruguay")
+                                .offset(x: -10, y: 40)
+
                         }
                         Text("")
                     }
-                    
+
                     
                     
                     
