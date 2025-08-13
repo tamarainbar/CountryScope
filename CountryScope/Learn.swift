@@ -59,38 +59,38 @@ struct Learn: View {
                     // Chile
                     NavigationLink(destination: CountryDetailView(countryName: "Chile")) {
                         Text("🇨🇱")
-                            .font(.title)
-                            .padding(8)
+                            .font(.title3)
+                            .padding(1)
                             .background(Circle().fill(Color.white))
                     }
-                    .offset(x: 10, y: 180)
+                    .offset(x: -430, y: 200)
                     
                     // Ecuador
                     NavigationLink(destination: CountryDetailView(countryName: "Ecuador")) {
                         Text("🇪🇨")
-                            .font(.title)
-                            .padding(8)
+                            .font(.title3)
+                            .padding(2)
                             .background(Circle().fill(Color.white))
                     }
-                    .offset(x: 10, y: 180)
+                    .offset(x: -490, y: 72)
                     
                     // Bolivia
                     NavigationLink(destination: CountryDetailView(countryName: "Bolivia")) {
                         Text("🇧🇴")
-                            .font(.title)
-                            .padding(8)
+                            .font(.title2)
+                            .padding(6)
                             .background(Circle().fill(Color.white))
                     }
-                    .offset(x: 10, y: 180)
+                    .offset(x: -410, y: 150)
                     
                     // Guyana
                     NavigationLink(destination: CountryDetailView(countryName: "Guyana")) {
                         Text("🇬🇾")
-                            .font(.title)
-                            .padding(8)
+                            .font(.title3)
+                            .padding(1)
                             .background(Circle().fill(Color.white))
                     }
-                    .offset(x: 10, y: 180)
+                    .offset(x: -385, y: 40)
                     
                     // Paraguay
                     NavigationLink(destination: CountryDetailView(countryName: "Paraguay")) {
