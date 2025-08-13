@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showPopup = false
     var body: some View {
             NavigationStack {
                ZStack{
@@ -50,24 +51,60 @@ struct ContentView: View {
                            .foregroundColor(Color.black)
                       //Add Vstack soon!
                        NavigationLink(destination: Learn())
-                        {
-                            ZStack{
-                                RoundedRectangle(cornerRadius: 9)
-                                    .fill(Color.blue1)
-                                    .frame(width: 150, height: 60)
-                                Text("Learn")
-                                    .font(.title)
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(Color.white)
-                            
-                            }//end of ZStack learn
-                        }//end of nav 1
+                       {
+                           ZStack{
+                               RoundedRectangle(cornerRadius: 9)
+                                   .fill(Color.blue1)
+                                   .frame(width: 250, height: 80)
+                               HStack
+                               {
+                                   Text("Learn")
+                                       .font(.title)
+                                       .fontWeight(.semibold)
+                                       .foregroundColor(Color.white)
+                                   ZStack
+                                   {
+                                       
+                                       VStack
+                                       {
+                                           Button("?") {
+                                               showPopup.toggle()
+                                           }
+                                           .padding()
+                                           .background(Color.blue)
+                                           .foregroundColor(.white)
+                                           .cornerRadius(10)
+                                       } //vstack
+                                       if showPopup {
+                                           //   Color.black.opacity(0.4)
+                                           //   .edgesIgnoringSafeArea(.all)
+                                           VStack(spacing: 20) {
+                                               Text("This is a custom popup view.")
+                                               Button("Close") {
+                                                   showPopup = false
+                                               }
+                                           }
+                                           .padding()
+                                           .background(Color.white)
+                                           .cornerRadius(10)
+                                           .shadow(radius: 10)
+                                           .frame(maxWidth: 300)
+                                           // Position popup over the button (adjust offset as needed)
+                                           .offset(x: 0, y: -70)
+                                           // Make sure the popup is above everything else
+                                           .zIndex(1)
+                                       }// popup
+                                   }//zstack
+                               } // end of hstack learn
+                             //  .animation(.easeInOut, value: showPopup)
+                           }//end of ZStack learn
+                       }//end of nav 1
                    Spacer()
                         NavigationLink(destination: Quiz()) {
                             ZStack{
                                 RoundedRectangle(cornerRadius: 9)
                                     .fill(Color.blue1)
-                                    .frame(width: 150, height: 60)
+                                    .frame(width: 250, height: 80)
                                 Text("Quiz")
                                     .font(.title)
                                     .fontWeight(.semibold)
