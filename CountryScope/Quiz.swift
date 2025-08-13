@@ -12,8 +12,9 @@ struct Quiz: View {
     @State private var buttonPressed = false
     @State private var submitted = false
     @State private var oneTime = true;
-    @State private var secretCountry = "ft"
-    //@State private var countryNum = 0
+    @State private var secretCountry = ""
+    @State private var countryNum = 0
+    @State private var randFact = ""
     
     @State private var countries: [[String]] = [
         ["Argentina", "Buenos Aires"],
@@ -35,32 +36,32 @@ struct Quiz: View {
     
     
     var body: some View {
-        VStack (spacing: 50) {
+        VStack (spacing: 10) {
             Text("Quiz")
                 .font(.title)
             Text("Clues:")
-            Button ("hui"){
-                let countryNum = Int.random(in: 0..<countries.count)
-                let factNum = Int.random(in: 1..<countries[countryNum].count)
+            
+            ZStack {
+                Rectangle()
+                    .frame(height: 100)
+                    .foregroundColor(.gray.opacity(0.2))
+                    .cornerRadius(10)
                 
-                let secretCountry = countries[countryNum][0]
-                let randFact = countries[countryNum][factNum]
-                
-                ForEach(1..<10) { index in
-                    countries[index] = countries[index].shuffled()
-                }
-                ZStack {
-                    Rectangle()
-                    if secretCountry == randFact {
-                        var lower = secretCountry.lowercased()
-                        Image("\(lower)Flag")
-                    } else {
-                        Text(randFact)
-                    }
+                if secretCountry == randFact {
+                    Image("plane")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 100)
+                } else {
+                    Text(randFact)
                 }
             }
+            .onAppear() {
+                setUp()
+            }
+        }
             
-            
+        
             
             
             ZStack {
@@ -115,7 +116,7 @@ struct Quiz: View {
                         countryButton(country: "Uruguay")
                     }
                     */
-            }
+            //}
             
             ZStack {
                 submitButton()
@@ -133,7 +134,18 @@ struct Quiz: View {
     } //body
 
         
+func setUp() {
+    countryNum = Int.random(in: 0..<countries.count)
+    let factNum = Int.random(in: 0..<countries[countryNum].count)
     
+    secretCountry = countries[countryNum][0]
+    randFact = countries[countryNum][factNum]
+    /*
+     ForEach(1..<10) { index in
+         countries[index] = countries[index].shuffled()
+     }
+     */
+}
     
     func countryButton(country: String) -> some View {
         Button {
