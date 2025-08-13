@@ -218,7 +218,7 @@ struct Quiz: View {
         } label: {
             Text("Submit")
               .frame(width: 100.0, height: 35.0)
-              .background(Color.blue)
+              .background(Color.blue1)
               .tint(Color.white)
               .bold(true)
               .buttonStyle(.borderedProminent)
@@ -247,6 +247,7 @@ struct Quiz: View {
 
 
 
+Message cp_group_4_camp_4_5
 
 
 
