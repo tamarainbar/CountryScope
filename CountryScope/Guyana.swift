@@ -9,10 +9,21 @@ import SwiftUI
 
 struct Guyana: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                // Title
+                Text("                    Guyana")
+                    .font(.largeTitle)
+                    .foregroundColor(Color(hue: 0.304, saturation: 0.611, brightness: 0.592))
+                    .multilineTextAlignment(.center)
+                    .bold()
+                Image("guyanaFlag")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            }
+        }
     }
-}
-
+    }
 #Preview {
     Guyana()
 }

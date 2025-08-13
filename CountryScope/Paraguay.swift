@@ -9,10 +9,21 @@ import SwiftUI
 
 struct Paraguay: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                // Title
+                Text("                  Paraguay")
+                    .font(.largeTitle)
+                    .foregroundColor(Color(hue: 0.02, saturation: 0.897, brightness: 0.768))
+                    .multilineTextAlignment(.center)
+                    .bold()
+                Image("paraguayFlag")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            }
+        }
     }
-}
-
+    }
 #Preview {
     Paraguay()
 }

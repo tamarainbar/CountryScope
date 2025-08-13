@@ -9,10 +9,21 @@ import SwiftUI
 
 struct Ecuador: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                // Title
+                Text("                   Ecuador")
+                    .font(.largeTitle)
+                    .foregroundColor(Color(hue: 0.121, saturation: 0.683, brightness: 0.798))
+                    .multilineTextAlignment(.center)
+                    .bold()
+                Image("EcuadorFlag")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            }
+        }
     }
-}
-
+    }
 #Preview {
     Ecuador()
 }

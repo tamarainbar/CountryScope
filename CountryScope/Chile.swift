@@ -9,10 +9,21 @@ import SwiftUI
 
 struct Chile: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                // Title
+                Text("                       Chile")
+                    .font(.largeTitle)
+                    .foregroundColor(Color(hue: 0.626, saturation: 0.664, brightness: 0.522))
+                    .multilineTextAlignment(.center)
+                    .bold()
+                Image("chileFlag")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            }
+        }
     }
-}
-
+    }
 #Preview {
     Chile()
 }

@@ -9,10 +9,21 @@ import SwiftUI
 
 struct Peru: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                // Title
+                Text("                       Peru")
+                    .font(.largeTitle)
+                    .foregroundColor(Color(hue: 0.023, saturation: 0.78, brightness: 0.814))
+                    .multilineTextAlignment(.center)
+                    .bold()
+                Image("peruFlag")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            }
+        }
     }
-}
-
+    }
 #Preview {
     Peru()
 }

@@ -9,10 +9,21 @@ import SwiftUI
 
 struct Suriname: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                // Title
+                Text("                 Suriname")
+                    .font(.largeTitle)
+                    .foregroundColor(Color(hue: 0.382, saturation: 0.433, brightness: 0.42))
+                    .multilineTextAlignment(.center)
+                    .bold()
+                Image("surinameFlag")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            }
+        }
     }
-}
-
+    }
 #Preview {
     Suriname()
 }
