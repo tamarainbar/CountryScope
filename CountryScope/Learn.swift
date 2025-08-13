@@ -11,8 +11,7 @@ struct Learn: View {
     @State private var scale: CGFloat = 1.2
     
     var body: some View {
-        NavigationStack
-        {
+        NavigationStack {
             ScrollView([.horizontal, .vertical], showsIndicators: false) {
                 ZStack {
                     Image("world")
@@ -20,7 +19,7 @@ struct Learn: View {
                         .aspectRatio(contentMode: .fit)
                         .scaleEffect(scale)
                     
-                    // South American country buttons
+                    
                     // Brazil
                     NavigationLink(destination: CountryDetailView(countryName: "Brazil")) {
                         Text("🇧🇷")
@@ -28,7 +27,7 @@ struct Learn: View {
                             .padding(8)
                             .background(Circle().fill(Color.white))
                     }
-                    .offset(x: -350, y: 100) //
+                    .offset(x: -350, y: 120)
                     
                     // Argentina
                     NavigationLink(destination: CountryDetailView(countryName: "Argentina")) {
@@ -37,25 +36,25 @@ struct Learn: View {
                             .padding(8)
                             .background(Circle().fill(Color.white))
                     }
-                    .offset(x: 30, y: 200)
+                    .offset(x: -390, y: 250)
                     
                     // Colombia
                     NavigationLink(destination: CountryDetailView(countryName: "Colombia")) {
                         Text("🇨🇴")
                             .font(.title)
-                            .padding(8)
+                            .padding(2)
                             .background(Circle().fill(Color.white))
                     }
-                    .offset(x: -20, y: 50)
+                    .offset(x: -455, y: 40)
                     
                     // Peru
                     NavigationLink(destination: CountryDetailView(countryName: "Peru")) {
                         Text("🇵🇪")
-                            .font(.title)
-                            .padding(8)
+                            .font(.title2)
+                            .padding(3)
                             .background(Circle().fill(Color.white))
                     }
-                    .offset(x: -30, y: 80)
+                    .offset(x: -465, y: 110)
                     
                     // Chile
                     NavigationLink(destination: CountryDetailView(countryName: "Chile")) {
@@ -66,6 +65,46 @@ struct Learn: View {
                     }
                     .offset(x: 10, y: 180)
                     
+                    // Ecuador
+                    NavigationLink(destination: CountryDetailView(countryName: "Ecuador")) {
+                        Text("🇪🇨")
+                            .font(.title)
+                            .padding(8)
+                            .background(Circle().fill(Color.white))
+                    }
+                    .offset(x: 10, y: 180)
+                    
+                    // Bolivia
+                    NavigationLink(destination: CountryDetailView(countryName: "Bolivia")) {
+                        Text("🇧🇴")
+                            .font(.title)
+                            .padding(8)
+                            .background(Circle().fill(Color.white))
+                    }
+                    .offset(x: 10, y: 180)
+                    
+                    // Guyana
+                    NavigationLink(destination: CountryDetailView(countryName: "Guyana")) {
+                        Text("🇬🇾")
+                            .font(.title)
+                            .padding(8)
+                            .background(Circle().fill(Color.white))
+                    }
+                    .offset(x: 10, y: 180)
+                    
+                    // Paraguay
+                    NavigationLink(destination: CountryDetailView(countryName: "Paraguay")) {
+                        Text("🇵🇾")
+                            .font(.title)
+                            .padding(8)
+                            .background(Circle().fill(Color.white))
+                    }
+                    .offset(x: 10, y: 180)
+                    
+                    
+                    
+                    
+                    
                 }
                 .scaleEffect(scale)
                 .gesture(
@@ -75,7 +114,6 @@ struct Learn: View {
                         }
                 )
             }
-
         }
     }
 }
@@ -92,3 +130,4 @@ struct CountryDetailView: View {
 #Preview {
     Learn()
 }
+
