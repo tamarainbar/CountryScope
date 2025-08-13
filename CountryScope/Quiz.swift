@@ -48,16 +48,22 @@ struct Quiz: View {
                     .scaledToFit()
                 
                 //pinPlacement()
-                ZStack {
-                    VStack {
-                        HStack {
+                ZStack{
+                    VStack (spacing: 410){
+                        HStack (spacing: 70){
                             countryButton(country: "Venezuela")
-                            Text("             ")
-                        }
-                        ForEach(1..<30) { index in
                             Text("")
                         }
+                        Text("")
                     }
+                    VStack (spacing: 380){
+                        HStack (spacing: 30){
+                            Text("")
+                            countryButton(country: "Guyana")
+                        }
+                        Text("")
+                    }
+                }
                     /*
                     HStack {
                         countryButton(country: "Ecuador")
@@ -88,7 +94,6 @@ struct Quiz: View {
                         countryButton(country: "Uruguay")
                     }
                     */
-                }
             }
             
             ZStack {
@@ -119,7 +124,7 @@ struct Quiz: View {
                 Image("map_pin")
                     .resizable()
                     .frame(width: 30.0, height: 30.0)
-                Text(country)
+                //Text(country)
             }
         }
     }
