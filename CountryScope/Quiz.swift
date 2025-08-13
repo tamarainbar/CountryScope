@@ -51,15 +51,22 @@ struct Quiz: View {
                         .foregroundColor(.gray.opacity(0.2))
                         .cornerRadius(10)
                     HStack (spacing: 20) {
-                        ForEach(0...attempts, id: \.self) { i in
-                        
-                            if secretCountry == countries[countryNum][i] {
-                                Image("\(secretCountry)Flag")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(height: 100)
-                            } else {
-                                Text(countries[countryNum][i])
+                        if attempts >= countries[0].count {
+                            Text("Nope!")
+                            Button ("Next") {
+                                oneTime = true
+                                setUp()
+                            }
+                        } else {
+                            ForEach(0...attempts, id: \.self) { i in
+                                if secretCountry == countries[countryNum][i] {
+                                    Image("\(secretCountry)Flag")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(height: 100)
+                                } else {
+                                    Text(countries[countryNum][i])
+                                }
                             }
                         }
                     }
