@@ -239,21 +239,3 @@ struct Quiz: View {
 
 
 
-
-
-
-
-
-
-
-
-Message cp_group_4_camp_4_5
-
-
-
-
-
-
-
-
-
