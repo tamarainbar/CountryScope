@@ -90,16 +90,45 @@ struct Learn: View {
                             .padding(1)
                             .background(Circle().fill(Color.white))
                     }
-                    .offset(x: -385, y: 40)
+                    .offset(x: -385, y: 2)
                     
                     // Paraguay
                     NavigationLink(destination: CountryDetailView(countryName: "Paraguay")) {
                         Text("🇵🇾")
-                            .font(.title)
-                            .padding(8)
+                            .font(.title3)
+                            .padding(1)
                             .background(Circle().fill(Color.white))
                     }
-                    .offset(x: 10, y: 180)
+                    .offset(x: -376, y: 185)
+                    
+                    // Suriname
+                    NavigationLink(destination: CountryDetailView(countryName: "Suriname")) {
+                        Text("🇸🇷")
+                            .font(.title3)
+                            .padding(1)
+                            .background(Circle().fill(Color.white))
+                    }
+                    .offset(x: -365, y: -1)
+                    
+                    // Uruguay
+                    NavigationLink(destination: CountryDetailView(countryName: "Uruguay")) {
+                        Text("🇺🇾")
+                            .font(.title3)
+                            .padding(1)
+                            .background(Circle().fill(Color.white))
+                    }
+                    .offset(x: -355, y: 240)
+                    
+                    // Venezuela
+                    NavigationLink(destination: CountryDetailView(countryName: "Venezuela")) {
+                        Text("🇻🇪")
+                            .font(.title3)
+                            .padding(1)
+                            .background(Circle().fill(Color.white))
+                    }
+                    .offset(x: -417, y: 24)
+                    
+                    
                     
                     
                     
