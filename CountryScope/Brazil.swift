@@ -12,7 +12,7 @@ struct Brazil: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10.0) {
                 // Title
-                    .bold()
+            //        .bold()
                 
                 Image("brazilFlag")
                     .resizable()

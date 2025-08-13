@@ -23,7 +23,7 @@ struct ContentView: View {
                                 Text("Country")
                                     .font(.custom(
                                         "American Typewriter",
-                                        fixedSize:45))
+                                        fixedSize:50))
                                     .fontWeight(.bold)
                                     .foregroundColor(Color.black)
                                     .multilineTextAlignment(.leading)
@@ -34,6 +34,43 @@ struct ContentView: View {
                             Text("Kaleidoscope")
                                 .font(.custom(
                                     "American Typewriter",
+                                    fixedSize:40))
+                                .fontWeight(.light)
+                                .multilineTextAlignment(.trailing)
+                        }//end of VStack 2
+                        Image ("map_pin") //stand in for logo
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                           // .padding(.bottom, 100)
+                            .frame(width: 50, height: 50)
+                    } // end of hstack
+                    Image("plane")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .padding(.bottom, 100)
+                        .frame(width: 350, height: 350)
+                    //    .padding(.bottom)
+                    
+                    
+                    Text("Welcome! Choose a mode!")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color.black)
+                    //Add Vstack soon!
+                    NavigationLink(destination: Learn())
+                    {
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 9)
+                                .fill(Color.blue1)
+                                .frame(width: 250, height: 80)
+                            HStack
+                            {
+                                Text("Learn")
+                                    .font(.title)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(Color.white)
+                                ZStack
+                                {
                                     //   ZStack
                                     //   {
                                     Button("?") {
