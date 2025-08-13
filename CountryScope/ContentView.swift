@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
             NavigationStack {
                ZStack{
-                  Color(red: 183/255, green: 232/255, blue: 232/255)
+                  Color(red: 221/255, green: 239/255, blue: 240/255)
                        .ignoresSafeArea(edges: .all)
                    VStack{
                        VStack(spacing:10){
@@ -31,58 +31,47 @@ struct ContentView: View {
                                .font(.custom(
                                "American Typewriter",
                                fixedSize:40))
-                               //.font(.largeTitle)
-                           
-                           
-//                               .fontWeight(.bold)
                                .fontWeight(.light)
-                               .multilineTextAlignment(.center)
-                                                    
+                               .multilineTextAlignment(.trailing)
+                                 
+                           
+                           
                        }//end of VStack 2
                        Image("plane")
                            .resizable()
                            .aspectRatio(contentMode: .fit)
-                           .padding(.bottom, 100)
+                       .padding(.bottom, 100)
                            .frame(width: 350, height: 350)
-                           .padding(.bottom)
+                       //    .padding(.bottom)
                        
                        
-                     //       Image(systemName: "globe")
-                       //     .imageScale(.large)
-                         //   .foregroundStyle(.tint)
-                            //   Text("Welcome!")
-                        
+                       Text("Welcome! Choose a mode!")
+                           .font(.headline)
+                           .foregroundColor(Color.black)
                       //Add Vstack soon!
                        NavigationLink(destination: Learn())
                         {
                             ZStack{
                                 RoundedRectangle(cornerRadius: 9)
+                                    .fill(Color.blue1)
                                     .frame(width: 150, height: 60)
-                               //     .fill(LinearGradient(
-                                  //  colors:[.green, .blue],
-                                    //startPoint: .top,
-                              //      endPoint: .bottom ))
-                                    
-                                 
-                               
                                 Text("Learn")
                                     .font(.title)
                                     .fontWeight(.semibold)
-                                    .foregroundColor(Color.green)
-                                
-                                
+                                    .foregroundColor(Color.white)
+                            
                             }//end of ZStack learn
                         }//end of nav 1
                    Spacer()
                         NavigationLink(destination: Quiz()) {
                             ZStack{
                                 RoundedRectangle(cornerRadius: 9)
+                                    .fill(Color.blue1)
                                     .frame(width: 150, height: 60)
-                               
                                 Text("Quiz")
                                     .font(.title)
                                     .fontWeight(.semibold)
-                                    .foregroundColor(Color.green)
+                                    .foregroundColor(Color.white)
                             }//end of ZStack quiz
                             
                         }//end of nav 2
