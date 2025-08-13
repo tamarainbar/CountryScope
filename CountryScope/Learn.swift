@@ -9,8 +9,26 @@ import SwiftUI
 import MapKit
 
 struct Learn: View {
+    @State private var scale: CGFloat = 1.2
     var body: some View {
-        Map {
+        NavigationStack {
+            ScrollView([.horizontal, .vertical], showsIndicators: false) {
+                Image("world")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .scaledToFit()
+                    .scaleEffect(scale)
+                    .gesture(
+                        MagnificationGesture()
+                            .onChanged { value in
+                                scale = value
+                                // Big enough to allow scrolling
+                            }
+                    )
+            }
+        } //end of nav stack
+        /* Map {
+                
             // Example markers
             Marker("United States", coordinate: CLLocationCoordinate2D(latitude: 37.0902, longitude: -95.7129))
             
@@ -46,6 +64,7 @@ struct Learn: View {
         }
         .mapControlVisibility(.hidden)
         .mapStyle(.imagery(elevation: .realistic))
+         */
     }
 }
 
