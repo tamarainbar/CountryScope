@@ -11,7 +11,8 @@ import MapKit
 struct Learn: View {
     @State private var scale: CGFloat = 1.2
     var body: some View {
-        NavigationStack {
+        NavigationStack
+        {
             ScrollView([.horizontal, .vertical], showsIndicators: false) {
                 Image("world")
                     .resizable()
@@ -26,6 +27,8 @@ struct Learn: View {
                             }
                     )
             }
+            
+
         } //end of nav stack
         /* Map {
                 
