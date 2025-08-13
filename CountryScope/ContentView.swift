@@ -25,23 +25,23 @@ struct ContentView: View {
                                    .foregroundColor(Color.black)
                                    .multilineTextAlignment(.leading)
                                    .padding(.leading)
-                              Spacer()
-                                   
+                               Spacer()
+                               
                            }//end of HStack
                            Text("Kaleidoscope")
                                .font(.custom(
-                               "American Typewriter",
-                               fixedSize:40))
+                                "American Typewriter",
+                                fixedSize:40))
                                .fontWeight(.light)
                                .multilineTextAlignment(.trailing)
-                                 
+                           
                            
                            
                        }//end of VStack 2
                        Image("plane")
                            .resizable()
                            .aspectRatio(contentMode: .fit)
-                       .padding(.bottom, 100)
+                           .padding(.bottom, 100)
                            .frame(width: 350, height: 350)
                        //    .padding(.bottom)
                        
@@ -49,7 +49,7 @@ struct ContentView: View {
                        Text("Welcome! Choose a mode!")
                            .font(.headline)
                            .foregroundColor(Color.black)
-                      //Add Vstack soon!
+                       //Add Vstack soon!
                        NavigationLink(destination: Learn())
                        {
                            ZStack{
@@ -64,9 +64,8 @@ struct ContentView: View {
                                        .foregroundColor(Color.white)
                                    ZStack
                                    {
-                                       
-                                       VStack
-                                       {
+                                    //   ZStack
+                                    //   {
                                            Button("?") {
                                                showPopup.toggle()
                                            }
@@ -74,15 +73,15 @@ struct ContentView: View {
                                            .background(Color.blue)
                                            .foregroundColor(.white)
                                            .cornerRadius(10)
-                                       } //vstack
+                            //           } //vstack
                                        if showPopup {
                                            //   Color.black.opacity(0.4)
                                            //   .edgesIgnoringSafeArea(.all)
                                            VStack(spacing: 20) {
                                                Text("This is a custom popup view.")
-                                               Button("Close") {
-                                                   showPopup = false
-                                               }
+                                              // Button("Close") {
+                                              //     showPopup = false
+                                             //  }
                                            }
                                            .padding()
                                            .background(Color.white)
@@ -90,15 +89,13 @@ struct ContentView: View {
                                            .shadow(radius: 10)
                                            .frame(maxWidth: 300)
                                            // Position popup over the button (adjust offset as needed)
-                                           .offset(x: 0, y: -70)
-                                           // Make sure the popup is above everything else
+                                           .offset(x: 0, y: -90)
                                            .zIndex(1)
                                        }// popup
-                                   }//zstack
-                               } // end of hstack learn
-                             //  .animation(.easeInOut, value: showPopup)
-                           }//end of ZStack learn
-                       }//end of nav 1
+                                   } // zstack
+                           } // end of hstack learn
+                       }//end of ZStack learn
+                   }//end of nav 1
                    Spacer()
                         NavigationLink(destination: Quiz()) {
                             ZStack{
