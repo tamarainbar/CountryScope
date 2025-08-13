@@ -12,9 +12,14 @@ struct Brazil: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 // Title
-                Text("Brazil")
+                Text("                     Brazil")
                     .font(.largeTitle)
+                    .foregroundColor(Color(hue: 0.358, saturation: 0.309, brightness: 0.524))
+                    .multilineTextAlignment(.center)
                     .bold()
+                Image("brazilFlag")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
             }
         }
     }

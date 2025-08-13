@@ -9,10 +9,21 @@ import SwiftUI
 
 struct Argentina: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                // Title
+                Text("                  Argentina")
+                    .font(.largeTitle)
+                    .foregroundColor(Color(hue: 0.581, saturation: 0.293, brightness: 0.597))
+                    .multilineTextAlignment(.center)
+                    .bold()
+                Image("ArgentinaFlag")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            }
+        }
     }
-}
-
+    }
 #Preview {
     Argentina()
 }
