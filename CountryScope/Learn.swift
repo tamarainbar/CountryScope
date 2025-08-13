@@ -11,7 +11,8 @@ struct Learn: View {
     @State private var scale: CGFloat = 1.2
     
     var body: some View {
-        NavigationStack {
+        NavigationStack
+        {
             ScrollView([.horizontal, .vertical], showsIndicators: false) {
                 ZStack {
                     Image("world")
@@ -74,6 +75,7 @@ struct Learn: View {
                         }
                 )
             }
+
         }
     }
 }
