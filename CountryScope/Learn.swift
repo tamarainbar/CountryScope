@@ -137,6 +137,9 @@ struct Learn: View {
                         }
                 )
             }
+            .navigationTitle("Return to Learn")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(true)
         }
     }
 }
