@@ -11,6 +11,7 @@ struct Quiz: View {
     @State private var submitted = false
     @State private var oneTime = true
     @State private var actOneTime = true
+    @State private var lose = false
     @State private var secretCountry = ""
     @State private var attempts = 0
     @State private var countryCount = 0
@@ -18,7 +19,7 @@ struct Quiz: View {
     @State private var bestScore = 0
     
     @State private var countries: [[String]] = [
-        ["Argentina", "Capital:\nBuenos Aires", "Landmark:\nObelisco de Buenos Aires"],
+        ["Argentina", "Capital:\nBuenos Aires", "Landmark:\nObelisco"],
         ["Bolivia", "Capital:\nLa Paz and Sucre", "Landmark:\nSalar de Uyuni"],
         ["Brazil", "Capital:\nBrasilia", "Landmark:\nChrist the Redeemer"],
         ["Chile", "Capital:\nSantiago", "Landmark:\nTorres del Paine National Park"],
@@ -78,10 +79,34 @@ struct Quiz: View {
                         .cornerRadius(10)
                         .padding(.horizontal, -100.0)
                     HStack (spacing: 20) {
-                        if attempts < countries[0].count {
-                            ForEach(0...attempts, id: \.self) { i in
+                        if attempts < countries[0].count + 1{
+                            if attempts == 3 {
+                                ForEach(0...attempts-1, id: \.self) { i in
+                                    if secretCountry == countries[countryCount][i] {
+                                        Image("\(secretCountry.lowercased())Flag")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(height: 100)
+                                    } else {
+                                        Text(countries[countryCount][i])
+                                    }
+                                }
+                            } else {
+                                ForEach(0...attempts, id: \.self) { i in
+                                    if secretCountry == countries[countryCount][i] {
+                                        Image("\(secretCountry.lowercased())Flag")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(height: 100)
+                                    } else {
+                                        Text(countries[countryCount][i])
+                                    }
+                                }
+                            }
+                        } else if lose {
+                            ForEach(0...attempts-1, id: \.self) { i in
                                 if secretCountry == countries[countryCount][i] {
-                                    Image("\(secretCountry)Flag")
+                                    Image("\(secretCountry.lowercased())Flag")
                                         .resizable()
                                         .scaledToFit()
                                         .frame(height: 100)
@@ -124,7 +149,8 @@ struct Quiz: View {
                         VStack (spacing: 0){
                             Text("You Lose!")
                                 .foregroundColor(Color.red)
-                            Text(secretCountry)
+                            //lose = true
+                            Text("Correct Country: \(secretCountry)")
                             Button ("Play Again") {
                                 bestScore = points
                                 points = 0
@@ -136,11 +162,14 @@ struct Quiz: View {
                                 setUp()
                             }
                         }
+                    } else if submitted == true && guess != secretCountry {
+                        Text("Incorrect\nGuess Again")
+                            .foregroundColor(Color.red)
                     }
                     if guess == secretCountry && submitted == true {
                         if countryCount != countries.count {
                             VStack (spacing: 10){
-                                Text("Yes!")
+                                Text("Correct!")
                                 Button ("Next") {
                                     oneTime = true
                                     submitted = false
