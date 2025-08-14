@@ -103,13 +103,13 @@ struct Quiz: View {
                     pinPlacement1(Vspace: 410, Hspace: -45, countryy: "Venezuela")
                     pinPlacement1(Vspace: 380, Hspace: 30, countryy: "Guyana")
                     pinPlacement1(Vspace: 360, Hspace: -80, countryy: "Colombia")
-                    pinPlacement1(Vspace: 285, Hspace: -110, countryy: "Ecuador")
-                    pinPlacement1(Vspace: 210, Hspace: -90, countryy: "Peru")
+                    pinPlacement1(Vspace: 285, Hspace: -105, countryy: "Ecuador")
+                    pinPlacement1(Vspace: 180, Hspace: -85, countryy: "Peru")
                     pinPlacement1(Vspace: 360, Hspace: 70, countryy: "Suriname")
                     pinPlacement1(Vspace: 345, Hspace: 120, countryy: "French Guiana")
                     pinPlacement1(Vspace: 190, Hspace: 133, countryy: "Brazil")
                     pinPlacement1(Vspace: 100, Hspace: -35, countryy: "Bolivia")
-                    pinPlacement2(Vspace: -10, Hspace: 40, countryy: "Paraguy")
+                    pinPlacement2(Vspace: -10, Hspace: 40, countryy: "Paraguay")
                     pinPlacement2(Vspace: 140, Hspace: -62, countryy: "Chile")
                     pinPlacement2(Vspace: 140, Hspace: -30, countryy: "Argentina")
                     pinPlacement2(Vspace: 110, Hspace: 70, countryy: "Uruguay")
@@ -255,7 +255,6 @@ struct Quiz: View {
                         .cornerRadius(10)
                 }
             }
-            Text(secretCountry)
         } //VStack
     }
     
