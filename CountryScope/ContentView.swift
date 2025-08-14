@@ -156,7 +156,6 @@ struct ContentView: View {
         } // end of nav stack
     }
 }
-
 #Preview {
-    ContentView()
+  ContentView()
 }
