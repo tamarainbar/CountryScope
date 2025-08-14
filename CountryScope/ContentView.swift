@@ -26,7 +26,7 @@ struct ContentView: View {
                                         fixedSize:40))
                                     .fontWeight(.bold)
                                     .foregroundColor(Color.black)
-                                    .multilineTextAlignment(.leading)
+                                    .multilineTextAlignment(.trailing)
                                     .padding([.top, .leading])
                                     
                                 Spacer()
@@ -39,13 +39,13 @@ struct ContentView: View {
                                 .multilineTextAlignment(.trailing)
                                 .padding()
                         }//end of VStack 2
-                        Image ("AppLogo") //stand in for logo
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 80, height: 100)
-                            .padding([.top, .leading])
+//                        Image ("plane") //stand in for logo
+//                            .resizable()
+//                            .aspectRatio(contentMode: .fit)
+//                            .frame(width: 80, height: 100)
+//                            .padding([.top, .leading])
                     } // end of hstack
-                    Image("plane")
+                    Image("AppLogo")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                        // .padding(.bottom, 100)

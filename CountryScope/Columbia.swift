@@ -16,7 +16,7 @@ struct Columbia: View {
                         fixedSize:45))          .foregroundColor(Color(hue: 0.063, saturation: 0.819, brightness: 0.96))
                     .multilineTextAlignment(.leading)
                     .bold()
-                Image("ColombiaFlag")
+                Image("colombiaFlag")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 //  .padding(.bottom, 50)
