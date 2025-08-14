@@ -71,20 +71,33 @@ struct Brazil: View {
         }//end of ZStack
         .padding(.bottom)
         }
-      }
-      Text("Popular Landmarks")
-          .font(.custom(
-           "Futura",
-           fixedSize:25))
-      Text("Christ the Redeemer Statue")
-      ZStack{//ZStack 1
-       RoundedRectangle(cornerRadius: 9)
-          .fill(Color.brazilgreen)
-          .frame(width: 270, height: 190)
-          Image("brazilLandmark")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-          .frame(width: 290, height: 170)
+        Text("Popular Landmarks")
+            .font(.custom(
+             "Futura",
+             fixedSize:25))
+        Text("Christ the Redeemer Statue")
+        ZStack{//ZStack 1
+         RoundedRectangle(cornerRadius: 9)
+            .fill(Color.brazilgreen)
+            .frame(width: 270, height: 190)
+            Image("brazilLandmark")
+              .resizable()
+              .aspectRatio(contentMode: .fit)
+            .frame(width: 290, height: 170)
+      }//end of scroll
+//      Text("Popular Landmarks")
+//          .font(.custom(
+//           "Futura",
+//           fixedSize:25))
+//      Text("Christ the Redeemer Statue")
+//      ZStack{//ZStack 1
+//       RoundedRectangle(cornerRadius: 9)
+//          .fill(Color.brazilgreen)
+//          .frame(width: 270, height: 190)
+//          Image("brazilLandmark")
+//            .resizable()
+//            .aspectRatio(contentMode: .fit)
+//          .frame(width: 290, height: 170)
     }//end of ZStack 1
       }
     }
