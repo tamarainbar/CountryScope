@@ -15,7 +15,7 @@ import SwiftUI
 struct Brazil: View {
   var body: some View {
     ScrollView {
-      VStack(alignment: .leading, spacing: -25.0) {
+      VStack(alignment: .leading, spacing: -20.0) {
       Text("         Brazil")
           .font(.custom(
            "American Typewriter",
@@ -26,7 +26,7 @@ struct Brazil: View {
           .resizable()
           .aspectRatio(contentMode: .fit)
         //  .padding(.bottom, 50)
-          .frame(width: 350, height: 350)
+          .frame(width: 350, height: 310)
         ZStack{
           RoundedRectangle(cornerRadius: 9)
             .fill(Color.brazilgreen)
