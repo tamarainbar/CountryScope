@@ -143,6 +143,7 @@ struct ContentView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarHidden(true)
         } // end of nav stack
+        .tint(.blue1)
     }
 }
 #Preview {
