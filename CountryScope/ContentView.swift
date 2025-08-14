@@ -29,7 +29,6 @@ struct ContentView: View {
                                     .multilineTextAlignment(.leading)
                                     .padding(.leading)
                                 Spacer()
-                                
                             }//end of HStack
                             Text("Kaleidoscope")
                                 .font(.custom(
@@ -41,7 +40,6 @@ struct ContentView: View {
                         Image ("map_pin") //stand in for logo
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                           // .padding(.bottom, 100)
                             .frame(width: 50, height: 50)
                     } // end of hstack
                     Image("plane")
@@ -49,14 +47,11 @@ struct ContentView: View {
                         .aspectRatio(contentMode: .fit)
                         .padding(.bottom, 100)
                         .frame(width: 350, height: 350)
-                    //    .padding(.bottom)
-                    
                     
                     Text("Welcome! Choose a mode!")
                         .font(.title2)
                         .fontWeight(.semibold)
                         .foregroundColor(Color.black)
-                    //Add Vstack soon!
                     NavigationLink(destination: Learn())
                     {
                         ZStack{
@@ -71,8 +66,6 @@ struct ContentView: View {
                                     .foregroundColor(Color.white)
                                 ZStack
                                 {
-                                    //   ZStack
-                                    //   {
                                     Button("?") {
                                         showPopup.toggle()
                                     }
@@ -80,27 +73,24 @@ struct ContentView: View {
                                     .background(Color.blue)
                                     .foregroundColor(.white)
                                     .cornerRadius(10)
-                                    //           } //vstack
-                                    if showPopup {
-                                        //   Color.black.opacity(0.4)
-                                        //   .edgesIgnoringSafeArea(.all)
-                                        VStack(spacing: 20) {
-                                            Text("This is a custom popup view.")
-                                            // Button("Close") {
-                                            //     showPopup = false
-                                            //  }
-                                        }
-                                        .padding()
-                                        .background(Color.white)
-                                        .cornerRadius(10)
-                                        .shadow(radius: 10)
-                                        .frame(maxWidth: 300)
-                                        // Position popup over the button (adjust offset as needed)
-                                        .offset(x: 0, y: -90)
-                                        .zIndex(1)
-                                    }// popup
                                 } // zstack
                             } // end of hstack learn
+                            if showPopup {
+                                VStack(spacing: 20) {
+                                    Text("In this mode, you will learn about different countries.")
+                                        .font(.title3)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(Color.blue)
+
+                                      }
+                                .padding()
+                                .background(Color.white)
+                                .cornerRadius(10)
+                                .shadow(radius: 10)
+                                .frame(maxWidth: 300)
+                                .offset(x: 0, y: -90)
+                                .zIndex(1)
+                            }// popup
                         }//end of ZStack learn
                     }//end of nav 1
                     Spacer()
@@ -117,8 +107,6 @@ struct ContentView: View {
                                     .foregroundColor(Color.white)
                                 ZStack
                                 {
-                                    //   ZStack
-                                    //   {
                                     Button("?") {
                                         showPopupA.toggle()
                                     }
@@ -126,32 +114,28 @@ struct ContentView: View {
                                     .background(Color.blue)
                                     .foregroundColor(.white)
                                     .cornerRadius(10)
-                                    //           } //vstack
-                                    if showPopupA {
-                                        //   Color.black.opacity(0.4)
-                                        //   .edgesIgnoringSafeArea(.all)
-                                        VStack(spacing: 20) {
-                                            Text("This is a custom popup view.")
-                                            // Button("Close") {
-                                            //     showPopup = false
-                                            //  }
-                                        }
-                                        .padding()
-                                        .background(Color.white)
-                                        .cornerRadius(10)
-                                        .shadow(radius: 10)
-                                        .frame(maxWidth: 300)
-                                        // Position popup over the button (adjust offset as needed)
-                                        .offset(x: 0, y: -90)
-                                        .zIndex(1)
-                                    }// popup
                                 } // zstack
                             } // end of hstack quiz
+                            if showPopupA {
+                                VStack(spacing: 20) {
+                                    Text("In this mode, you will be tested on different South American countries")
+                                        .font(.title3)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(Color.blue)
+                                }
+                                .padding()
+                                .background(Color.white)
+                                .cornerRadius(10)
+                                .shadow(radius: 10)
+                                .frame(maxWidth: 300)
+                                // Position popup over the button (adjust offset as needed)
+                                .offset(x: 0, y: -90)
+                                .zIndex(1)
+                            }// popup
                         }//end of ZStack quiz
                     }//end of nav 2
                     Spacer()
                 } // end of vstack
-                //.padding()
             }//end of ZStack
         } // end of nav stack
     }
