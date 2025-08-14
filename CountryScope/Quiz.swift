@@ -31,9 +31,25 @@ struct Quiz: View {
         ["Suriname", "Capital:\nParamaribo", "Landmark:\nHistoric Inner City of Paramaribo"],
         ["Uruguay", "Capital:\nMontevideo", "Landmark:\nThe Palacio Salvo"],
         ["Venezuela", "Capital:\nCaracas", "Landmark:\nAngel Falls"],
-        ["French Guiana", "Capital:\nCayenne", "Landmark:\nSpace Center"],
+        ["French Guiana", "Capital:\nCayenne", "Landmark:\nSpace Centre"],
     ]
     
+    /*
+     - Argentina, Buenos Aires, Obelisco, 🇦🇷
+     - Bolivia, La Paz and Sucre, Salar de Uyuni, 🇧🇴
+     - Brazil, Brasilia, Christ the Redeemer, 🇧🇷
+     - Chile, Santiago, Torres del Paine National Park, 🇨🇱
+     - Colombia, Bogotá, Monserrate, 🇨🇴
+     - Ecuador, Quito, Mitad del Mundo, 🇪🇨
+     - Guyana, Georgetown, 1763 Monument, 🇬🇾
+     - Paraguay, Asunción, National Pantheon of Heroes, 🇵🇾
+     - Peru, Lima, Machu Picchu, 🇵🇪
+     - Suriname, Paramaribo, Historic Inner City of Paramaribo, 🇸🇷
+     - Uruguay, Montevideo, The Palacio Salvo, 🇺🇾
+     - Venezuela, Caracas, Angel Falls, 🇻🇪
+     - French Guiana, Cayenne, Space Centre, 🇬🇫
+    */
+     
     var body: some View {
         VStack {
             VStack (spacing: 5) {
@@ -167,7 +183,7 @@ struct Quiz: View {
                             .foregroundColor(Color.red)
                     }
                     if guess == secretCountry && submitted == true {
-                        if countryCount != countries.count {
+                        if countryCount != countries.count - 1{
                             VStack (spacing: 10){
                                 Text("Correct!")
                                 Button ("Next") {
@@ -258,7 +274,7 @@ struct Quiz: View {
                     if(guess != secretCountry) {
                         attempts += 1
                     } else {
-                        points += 300 - attempts * 100
+                        points += 500 - attempts * 100
                     }
                 } label: {
                     Text("Submit")
