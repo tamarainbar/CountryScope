@@ -17,7 +17,7 @@ struct Suriname: View {
                     .foregroundColor(Color(hue: 0.382, saturation: 0.433, brightness: 0.42))
                     .multilineTextAlignment(.center)
                     .bold()
-                Image("surinameFlag")
+                Image("SurinameFlag")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
             }

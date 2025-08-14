@@ -10,71 +10,88 @@ struct Quiz: View {
     @State private var buttonPressed = false
     @State private var submitted = false
     @State private var oneTime = true
+    @State private var actOneTime = true
     @State private var secretCountry = ""
-    @State private var countryNum = 0
     @State private var attempts = 0
+    @State private var countryCount = 0
+    @State private var points = 0
+    @State private var bestScore = 0
     
     @State private var countries: [[String]] = [
-        ["Argentina", "Buenos Aires", ""],
-        ["Bolivia", "La Paz and Sucre", "Kantuta and the Patujú Flower"],
-        ["Brazil", "Brasilia", "Ipê-Amarelo Flower"],
-        ["Chile", "Santiago", "Chilean Bellflower or Copihue"],
-        ["Colombia", "Bogotá", "adf"],
-        ["Ecuador", "Quito", "b"],
-        ["Guyana", "Georgetown", "c"],
-        ["Paraguay", "Asunción", "d"],
-        ["Peru", "Lima", "e"],
-        ["Suriname", "Paramaribo", "f"],
-        ["Uruguay", "Montevideo", "g"],
-        ["Venezuela", "Caracas", "h"],
-        ["French Guiana", "Cayenne", "i"],
+        ["Argentina", "Capital:\nBuenos Aires", "Nature:\nPerito Moreno Glacier"],
+        ["Bolivia", "Capital:\nLa Paz and Sucre", "Nature:\nSalar de Uyuni"],
+        ["Brazil", "Capital:\nBrasilia", "Nature:\nAmazon Rainforest and River"],
+        ["Chile", "Capital:\nSantiago", "Nature:\nAtacama Desert"],
+        ["Colombia", "Capital:\nBogotá", "Nature:\nCaño Cristales"],
+        ["Ecuador", "Capital:\nQuito", "Nature:\nGalápagos Islands"],
+        ["Guyana", "Capital:\nGeorgetown", "Nature:\nKaieteur Falls"],
+        ["Paraguay", "Capital:\nAsunción", "Nature:\nCerro Tres Kandú"],
+        ["Peru", "Capital:\nLima", "Nature:\nAndes Mountains"],
+        ["Suriname", "Capital:\nParamaribo", "Nature:\nVoltzberg Granite Dome"],
+        ["Uruguay", "Capital:\nMontevideo", "Nature:\nCerro Catedral"],
+        ["Venezuela", "Capital:\nCaracas", "Nature:\nAuyán-Tepui"],
+        ["French Guiana", "Capital:\nCayenne", "Nature:\nAmazonian Park"],
     ]
     
     var body: some View {
         VStack {
             VStack (spacing: 5) {
-                Text("Quiz")
-                    .font(.custom(
-                        "American Typewriter",
-                        fixedSize:40))
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.black)
-                    .multilineTextAlignment(.leading)
                 HStack {
-                    Text("Clues: (\(secretCountry))")
+                    VStack {
+                        Button("Retry") {
+                            bestScore = points
+                            oneTime = true
+                            actOneTime = true
+                            countryCount += 1
+                            setUp()
+                        }
+                        HStack {
+                            Text("Clues:")
+                        }
+                    }
                     Spacer()
+                    
+                    Text("Quiz")
+                        .font(.custom(
+                            "American Typewriter",
+                            fixedSize:40))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.black)
+                        .multilineTextAlignment(.leading)
+                    
+                    Spacer()
+                    
+                    VStack {
+                        Text("Points: \(points)")
+                        Text("Best Score: \(bestScore)")
+                            .padding(.trailing)
+                    }
                 }
-                .padding(.leading)
+                .onAppear() {
+                    setUp()
+                }
+                
                 ZStack {
                     Rectangle()
                         .frame(height: 100)
                         .foregroundColor(.gray.opacity(0.2))
                         .cornerRadius(10)
                     HStack (spacing: 20) {
-                        if attempts >= countries[0].count {
-                            Text("Nope!")
-                            Button ("Next") {
-                                oneTime = true
-                                setUp()
-                            }
-                        } else {
+                        if attempts < countries[0].count {
                             ForEach(0...attempts, id: \.self) { i in
-                                if secretCountry == countries[countryNum][i] {
+                                if secretCountry == countries[countryCount][i] {
                                     Image("\(secretCountry)Flag")
                                         .resizable()
                                         .scaledToFit()
                                         .frame(height: 100)
                                 } else {
-                                    Text(countries[countryNum][i])
+                                    Text(countries[countryCount][i])
                                 }
                             }
                         }
                     }
-                }
-                .onAppear() {
-                    setUp()
-                }
-            }
+                } //ZStack
+            } //VStack 5 spacing
             
             
             ZStack {
@@ -102,24 +119,57 @@ struct Quiz: View {
                         }
                         Text("")
                     }
-                }//end of giant ZStack
-            } //ZStack
+                }//ZStack
+            } //end of giant ZStack
+            
+            
             ZStack {
-                submitButton()
-                if submitted == true {
-                    if guess == secretCountry {
-                        Rectangle()
-                            .frame(width: 200.0, height: 80.0)
-                            .foregroundStyle(Color.white)
-                            .accessibilityLabel("You Win!")
-                        Text("You Win!")
-                            .font(.title)
-                            .foregroundColor(Color.green)
-                    } else {
+                HStack (spacing: 20) {
+                    submitButton()
+                    if attempts >= countries[0].count {
+                        VStack (spacing: 10){
+                            Text("Nope!")
+                            Button ("Next") {
+                                oneTime = true
+                                countryCount += 1
+                                setUp()
+                            }
+                        }
+                    }
+                    if guess == secretCountry && submitted == true {
+                        if countryCount != 12 {
+                            VStack (spacing: 10){
+                                Text("Yes!")
+                                Button ("Next") {
+                                    oneTime = true
+                                    countryCount += 1
+                                    setUp()
+                                }
+                            }
+                        } else {
+                            ZStack {
+                                Rectangle()
+                                    .frame(width: 200.0, height: 80.0)
+                                    .foregroundStyle(Color.white)
+                                    .accessibilityLabel("You Win!")
+                                Text("You Win!")
+                                    .font(.title)
+                                    .foregroundColor(Color.green)
+                            }
+                            Button ("Play Again") {
+                                bestScore = points
+                                oneTime = true
+                                actOneTime = true
+                                countryCount = 0
+                                setUp()
+                            }
+                        }
                     }
                 }
             }
+            
         } //VStack
+        
     } //body
     
     
@@ -135,11 +185,12 @@ struct Quiz: View {
     
     func setUp() {
         if oneTime {
-            countryNum = Int.random(in: 0..<countries.count)
-            secretCountry = countries[countryNum][0]
-            for i in 0..<5 {
-                countries[i] = countries[i].shuffled()
+            if actOneTime {
+                countries = countries.shuffled()
+                actOneTime = false
             }
+            secretCountry = countries[countryCount][0]
+            countries[countryCount] = countries[countryCount].shuffled()
             attempts = 0
             oneTime = false
         }
@@ -148,6 +199,7 @@ struct Quiz: View {
     func countryButton(country: String) -> some View {
         Button {
             buttonPressed = true
+            submitted = false
             guess = country
         } label: {
             VStack (spacing: 0) {
@@ -164,7 +216,12 @@ struct Quiz: View {
             if(buttonPressed == true) {
                 Button {
                     submitted = true
-                    attempts = attempts + 1
+                    buttonPressed = false
+                    if(guess != secretCountry) {
+                        attempts += 1
+                    } else {
+                        points += 300 - attempts * 100
+                    }
                 } label: {
                     Text("Submit")
                         .frame(width: 100.0, height: 25.0)

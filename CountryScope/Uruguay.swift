@@ -17,7 +17,7 @@ struct Uruguay: View {
                     .foregroundColor(Color(hue: 0.023, saturation: 0.522, brightness: 0.652))
                     .multilineTextAlignment(.center)
                     .bold()
-                Image("uruguayFlag")
+                Image("UruguayFlag")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
             }

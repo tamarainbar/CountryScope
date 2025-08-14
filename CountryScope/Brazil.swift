@@ -22,7 +22,7 @@ struct Brazil: View {
            fixedSize:45))          .foregroundColor(Color(hue: 0.358, saturation: 0.309, brightness: 0.524))
           .multilineTextAlignment(.leading)
           .bold()
-        Image("brazilFlag")
+        Image("BrazilFlag")
           .resizable()
           .aspectRatio(contentMode: .fit)
         //  .padding(.bottom, 50)

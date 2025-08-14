@@ -17,7 +17,7 @@ struct Bolivia: View {
                     .foregroundColor(Color(hue: 0.023, saturation: 0.522, brightness: 0.652))
                     .multilineTextAlignment(.center)
                     .bold()
-                Image("boliviaFlag")
+                Image("BoliviaFlag")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
             }
