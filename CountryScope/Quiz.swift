@@ -81,7 +81,7 @@ struct Quiz: View {
                         if attempts < countries[0].count {
                             ForEach(0...attempts, id: \.self) { i in
                                 if secretCountry == countries[countryCount][i] {
-                                    Image("\(secretCountry)Flag")
+                                    Image("\(secretCountry.lowercased())Flag")
                                         .resizable()
                                         .scaledToFit()
                                         .frame(height: 100)
