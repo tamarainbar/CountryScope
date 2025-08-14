@@ -17,7 +17,7 @@ struct Peru: View {
                     .foregroundColor(Color(hue: 0.023, saturation: 0.78, brightness: 0.814))
                     .multilineTextAlignment(.center)
                     .bold()
-                Image("peruFlag")
+                Image("PeruFlag")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
             }

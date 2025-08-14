@@ -17,7 +17,7 @@ struct Chile: View {
                     .foregroundColor(Color(hue: 0.626, saturation: 0.664, brightness: 0.522))
                     .multilineTextAlignment(.center)
                     .bold()
-                Image("chileFlag")
+                Image("ChileFlag")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
             }

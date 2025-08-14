@@ -17,7 +17,7 @@ struct Guyana: View {
                     .foregroundColor(Color(hue: 0.304, saturation: 0.611, brightness: 0.592))
                     .multilineTextAlignment(.center)
                     .bold()
-                Image("guyanaFlag")
+                Image("GuyanaFlag")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
             }

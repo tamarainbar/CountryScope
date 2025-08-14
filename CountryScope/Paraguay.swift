@@ -17,7 +17,7 @@ struct Paraguay: View {
                     .foregroundColor(Color(hue: 0.02, saturation: 0.897, brightness: 0.768))
                     .multilineTextAlignment(.center)
                     .bold()
-                Image("paraguayFlag")
+                Image("ParaguayFlag")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
             }
