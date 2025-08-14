@@ -39,10 +39,11 @@ struct ContentView: View {
                                 .multilineTextAlignment(.trailing)
                                 .padding()
                         }//end of VStack 2
-                        Image ("map_pin") //stand in for logo
+                        Image ("AppLogo") //stand in for logo
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 80, height: 100)
+                            .padding([.top, .leading])
                     } // end of hstack
                     Image("plane")
                         .resizable()
