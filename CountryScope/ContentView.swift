@@ -18,34 +18,36 @@ struct ContentView: View {
                 VStack{
                     HStack
                     {
-                        VStack(spacing:10){
+                        VStack(spacing: 0){
                             HStack{
                                 Text("Country")
                                     .font(.custom(
                                         "American Typewriter",
-                                        fixedSize:50))
+                                        fixedSize:40))
                                     .fontWeight(.bold)
                                     .foregroundColor(Color.black)
                                     .multilineTextAlignment(.leading)
-                                    .padding(.leading)
+                                    .padding([.top, .leading])
+                                    
                                 Spacer()
                             }//end of HStack
                             Text("Kaleidoscope")
                                 .font(.custom(
                                     "American Typewriter",
                                     fixedSize:40))
-                                .fontWeight(.light)
+                                .fontWeight(.bold)
                                 .multilineTextAlignment(.trailing)
+                                .padding()
                         }//end of VStack 2
                         Image ("map_pin") //stand in for logo
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 50, height: 50)
+                            .frame(width: 80, height: 100)
                     } // end of hstack
                     Image("plane")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .padding(.bottom, 100)
+                       // .padding(.bottom, 100)
                         .frame(width: 350, height: 350)
                     
                     Text("Welcome! Choose a mode!")
@@ -137,6 +139,9 @@ struct ContentView: View {
                     Spacer()
                 } // end of vstack
             }//end of ZStack
+            .navigationTitle("Home")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(true)
         } // end of nav stack
     }
 }
