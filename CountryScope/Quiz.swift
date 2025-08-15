@@ -119,7 +119,7 @@ struct Quiz: View {
                                     }
                                 }
                             }
-                        } else if lose {
+                        } else {
                             ForEach(0...attempts-1, id: \.self) { i in
                                 if secretCountry == countries[countryCount][i] {
                                     Image("\(secretCountry.lowercased())Flag")
@@ -165,7 +165,6 @@ struct Quiz: View {
                         VStack (spacing: 0){
                             Text("You Lose!")
                                 .foregroundColor(Color.red)
-                            //lose = true
                             Text("Correct Country: \(secretCountry)")
                             Button ("Play Again") {
                                 bestScore = points
