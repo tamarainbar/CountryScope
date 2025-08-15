@@ -31,7 +31,7 @@ struct Quiz: View {
         ["Suriname", "Capital:\nParamaribo", "Landmark:\nHistoric Inner City of Paramaribo"],
         ["Uruguay", "Capital:\nMontevideo", "Landmark:\nThe Palacio Salvo"],
         ["Venezuela", "Capital:\nCaracas", "Landmark:\nAngel Falls"],
-        ["French Guiana", "Capital:\nCayenne", "Landmark:\nSpace Centre"],
+        ["French Guiana", "Capital:\nCayenne", "Landmark:\nSpace Center"],
     ]
     
     /*
@@ -47,7 +47,7 @@ struct Quiz: View {
      - Suriname, Paramaribo, Historic Inner City of Paramaribo, 🇸🇷
      - Uruguay, Montevideo, The Palacio Salvo, 🇺🇾
      - Venezuela, Caracas, Angel Falls, 🇻🇪
-     - French Guiana, Cayenne, Space Centre, 🇬🇫
+     - French Guiana, Cayenne, Space Center, 🇬🇫
     */
      
     var body: some View {
@@ -76,7 +76,7 @@ struct Quiz: View {
                                 points = 0
                                 oneTime = true
                                 actOneTime = true
-                                countryCount += 1
+                                countryCount = 0
                                 setUp()
                             }
                             
@@ -186,6 +186,7 @@ struct Quiz: View {
                         if countryCount != countries.count - 1{
                             VStack (spacing: 10){
                                 Text("Correct!")
+                                    .foregroundColor(Color.green)
                                 Button ("Next") {
                                     oneTime = true
                                     submitted = false
@@ -240,6 +241,21 @@ struct Quiz: View {
     func setUp() {
         if oneTime {
             if actOneTime {
+                countries = [
+                    ["Argentina", "Capital:\nBuenos Aires", "Landmark:\nObelisco"],
+                    ["Bolivia", "Capital:\nLa Paz and Sucre", "Landmark:\nSalar de Uyuni"],
+                    ["Brazil", "Capital:\nBrasilia", "Landmark:\nChrist the Redeemer"],
+                    ["Chile", "Capital:\nSantiago", "Landmark:\nTorres del Paine National Park"],
+                    ["Colombia", "Capital:\nBogotá", "Landmark:\nMonserrate"],
+                    ["Ecuador", "Capital:\nQuito", "Landmark:\nMitad del Mundo"],
+                    ["Guyana", "Capital:\nGeorgetown", "Landmark:\n1763 Monument"],
+                    ["Paraguay", "Capital:\nAsunción", "Landmark:\nNational Pantheon of Heroes"],
+                    ["Peru", "Capital:\nLima", "Landmark:\nMachu Picchu"],
+                    ["Suriname", "Capital:\nParamaribo", "Landmark:\nHistoric Inner City of Paramaribo"],
+                    ["Uruguay", "Capital:\nMontevideo", "Landmark:\nThe Palacio Salvo"],
+                    ["Venezuela", "Capital:\nCaracas", "Landmark:\nAngel Falls"],
+                    ["French Guiana", "Capital:\nCayenne", "Landmark:\nSpace Center"],
+                ]
                 countries = countries.shuffled()
                 actOneTime = false
             }
