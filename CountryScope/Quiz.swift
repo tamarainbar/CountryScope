@@ -209,7 +209,7 @@ struct Quiz: View {
                         }
                     }
                 }
-            } //win, lose, next buttons
+            }
             
         } //VStack
         .padding()
