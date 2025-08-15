@@ -11,7 +11,6 @@ struct Quiz: View {
     @State private var submitted = false
     @State private var oneTime = true
     @State private var actOneTime = true
-    @State private var lose = false
     @State private var secretCountry = ""
     @State private var attempts = 0
     @State private var countryCount = 0
