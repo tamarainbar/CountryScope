@@ -166,7 +166,9 @@ struct Quiz: View {
                                 .foregroundColor(Color.red)
                             Text("Correct Country: \(secretCountry)")
                             Button ("Play Again") {
-                                bestScore = points
+                                if points > bestScore {
+                                    bestScore = points
+                                }
                                 points = 0
                                 submitted = false
                                 buttonPressed = false
@@ -197,7 +199,9 @@ struct Quiz: View {
                             Text("You Win!")
                                 .foregroundColor(Color.green)
                             Button ("Play Again") {
-                                bestScore = points
+                                if points > bestScore {
+                                    bestScore = points
+                                }
                                 points = 0
                                 submitted = false
                                 buttonPressed = false
